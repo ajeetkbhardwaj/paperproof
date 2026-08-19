@@ -4,6 +4,10 @@ import Lean
 import Paperproof
 
 theorem apply (a b : ℝ) : a = b := by
+  /-
+  a b : ℝ
+  ⊢ ∀ {α : Type} [inst : PartialOrder α] {a b : α}, a ≤ b → b ≤ a → a = b
+  -/
   apply le_antisymm
 
 theorem have_ (a b : ℝ) (h1 : a ≤ b) (h2 : b ≤ a) : True := by
@@ -23,4 +27,3 @@ theorem use : ∃ x : Nat, x = 5 := by
 
 theorem induction (n : ℕ) : Nat.mul 0 n = 0 := by
   induction n
-
